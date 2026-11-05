@@ -1,0 +1,7 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {"label":"Agenda 13: executar no Windows","type":"process","command":"powershell.exe","args":["-NoProfile","-ExecutionPolicy","Bypass","-File","${workspaceFolder}/executar.ps1"],"problemMatcher":"$msCompile","group":{"kind":"build","isDefault":true}},
+    {"label":"Agenda 13: testar cálculos","type":"process","command":"powershell.exe","args":["-NoProfile","-ExecutionPolicy","Bypass","-File","${workspaceFolder}/executar.ps1","-Testar"],"problemMatcher":"$msCompile"}
+  ]
+}

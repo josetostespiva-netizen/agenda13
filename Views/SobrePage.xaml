@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="agenda13.Views.SobrePage" Title="Sobre">
+  <ScrollView><VerticalStackLayout Padding="24" Spacing="20" MaximumWidthRequest="660">
+    <Border BackgroundColor="{StaticResource Primary}" StrokeThickness="0" Padding="28">
+      <VerticalStackLayout Spacing="12">
+        <Image Source="hotel.png" HeightRequest="110" />
+        <Label Text="App Hotel" FontSize="32" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+        <Label Text="Uma boa viagem começa no planejamento." TextColor="#E3C58F" HorizontalTextAlignment="Center" />
+      </VerticalStackLayout>
+    </Border>
+    <Label Text="Sobre o projeto" Style="{StaticResource Heading}" />
+    <Label Text="Aplicativo acadêmico para simular hospedagens, escolher acomodações e calcular o valor de uma estadia com praticidade." />
+    <Border><VerticalStackLayout Spacing="10">
+      <Label Text="DESENVOLVIDO POR" Style="{StaticResource Caption}" />
+      <Label Text="José Piva" FontSize="26" FontAttributes="Bold" />
+      <Label Text="Ano de desenvolvimento: 2026" />
+      <BoxView HeightRequest="1" Color="#DFE5DF" Margin="0,6" />
+      <Label Text="Agenda 13 · Desenvolvimento de Sistemas" />
+      <Label Text="C# · XAML · .NET MAUI" FontAttributes="Bold" />
+      <Label Text="Versão 1.0" Style="{StaticResource Caption}" />
+    </VerticalStackLayout></Border>
+    <Label Text="Baseado no projeto MauiAppHotel de Tiago Antonio da Silva e na apostila da Agenda 13 do Centro Paula Souza. Personalização visual e tela Sobre por José Piva." Style="{StaticResource Caption}" />
+    <Button Text="Voltar ao App Hotel" Clicked="Voltar_Clicked" />
+  </VerticalStackLayout></ScrollView>
+</ContentPage>

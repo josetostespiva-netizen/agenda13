@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="agenda13.Views.ContratacaoHospedagem" Title="App Hotel">
+  <ContentPage.ToolbarItems><ToolbarItem Text="Sobre" Clicked="Sobre_Clicked" /></ContentPage.ToolbarItems>
+  <ScrollView>
+    <VerticalStackLayout Padding="24" Spacing="18" MaximumWidthRequest="660" HorizontalOptions="Fill">
+      <Border BackgroundColor="{StaticResource Primary}" StrokeThickness="0" Padding="24">
+        <Grid ColumnDefinitions="*,76" ColumnSpacing="12">
+          <VerticalStackLayout Spacing="7">
+            <Label Text="AGENDA 13  /  APP HOTEL" TextColor="#E3C58F" FontSize="12" CharacterSpacing="2" />
+            <Label Text="Sua próxima estadia&#10;começa aqui." TextColor="White" FontFamily="OpenSansSemibold" FontSize="27" />
+            <Label Text="Planeje os dias. Aproveite a viagem." TextColor="#D6E5DF" FontSize="13" />
+          </VerticalStackLayout>
+          <Image Grid.Column="1" Source="hotel.png" HeightRequest="88" SemanticProperties.Description="Ilustração de um hotel" />
+        </Grid>
+      </Border>
+      <Border>
+        <VerticalStackLayout Spacing="14">
+          <Label Text="01   Quem vai viajar?" Style="{StaticResource Heading}" />
+          <Grid ColumnDefinitions="*,40,Auto" RowDefinitions="Auto,Auto" RowSpacing="12">
+            <Label Text="Adultos" VerticalOptions="Center" />
+            <Label Grid.Column="1" Text="{Binding Value, Source={x:Reference stp_adultos}}" VerticalOptions="Center" FontAttributes="Bold" />
+            <Stepper Grid.Column="2" x:Name="stp_adultos" Minimum="1" Maximum="10" Value="2" Increment="1" SemanticProperties.Description="Quantidade de adultos" />
+            <Label Grid.Row="1" Text="Crianças" VerticalOptions="Center" />
+            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Value, Source={x:Reference stp_criancas}}" VerticalOptions="Center" FontAttributes="Bold" />
+            <Stepper Grid.Row="1" Grid.Column="2" x:Name="stp_criancas" Minimum="0" Maximum="10" Increment="1" SemanticProperties.Description="Quantidade de crianças" />
+          </Grid>
+          <Label Text="Pelo menos 1 adulto. Até 10 pessoas de cada categoria." Style="{StaticResource Caption}" />
+        </VerticalStackLayout>
+      </Border>
+      <Border>
+        <VerticalStackLayout Spacing="12">
+          <Label Text="02   Sua acomodação" Style="{StaticResource Heading}" />
+          <Picker x:Name="pck_quarto" Title="Selecione sua suíte" ItemDisplayBinding="{Binding Nome}" SelectedIndexChanged="Quarto_Changed" />
+          <Label x:Name="lbl_descricao" Style="{StaticResource Caption}" />
+          <Label x:Name="lbl_tarifas" FontSize="13" FontAttributes="Bold" />
+        </VerticalStackLayout>
+      </Border>
+      <Border>
+        <VerticalStackLayout Spacing="12">
+          <Label Text="03   Período da estadia" Style="{StaticResource Heading}" />
+          <Grid ColumnDefinitions="*,*" ColumnSpacing="16" RowDefinitions="Auto,Auto">
+            <Label Text="CHECK-IN" Style="{StaticResource Caption}" />
+            <Label Grid.Column="1" Text="CHECK-OUT" Style="{StaticResource Caption}" />
+            <DatePicker Grid.Row="1" x:Name="dtpck_checkin" Format="dd/MM/yyyy" DateSelected="CheckIn_Changed" />
+            <DatePicker Grid.Row="1" Grid.Column="1" x:Name="dtpck_checkout" Format="dd/MM/yyyy" />
+          </Grid>
+        </VerticalStackLayout>
+      </Border>
+      <Button x:Name="btn_avancar" Text="Calcular minha estadia →" Clicked="Avancar_Clicked" />
+      <Label Text="Simulação acadêmica · tarifas demonstrativas por pessoa/noite. Nenhuma reserva ou cobrança é realizada." Style="{StaticResource Caption}" HorizontalTextAlignment="Center" />
+    </VerticalStackLayout>
+  </ScrollView>
+</ContentPage>

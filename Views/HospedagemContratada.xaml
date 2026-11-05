@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:agenda13.Models" x:DataType="models:Hospedagem"
+             x:Class="agenda13.Views.HospedagemContratada" Title="Resumo da estadia">
+  <ScrollView><VerticalStackLayout Padding="24" Spacing="20" MaximumWidthRequest="660">
+    <Label Text="SEU PRÓXIMO DESTINO" FontSize="12" CharacterSpacing="2" />
+    <Label Text="Uma pausa bem planejada." FontSize="30" FontFamily="OpenSansSemibold" />
+    <Label Text="Confira os detalhes da sua simulação." Style="{StaticResource Caption}" />
+    <Border><VerticalStackLayout Spacing="16">
+      <Image Source="hotel.png" HeightRequest="90" HorizontalOptions="Start" />
+      <Label Text="{Binding Quarto.Nome}" Style="{StaticResource Heading}" />
+      <Label Text="{Binding Hospedes}" />
+      <BoxView HeightRequest="1" Color="#DFE5DF" />
+      <Label Text="PERÍODO" Style="{StaticResource Caption}" />
+      <Label Text="{Binding Periodo}" FontAttributes="Bold" />
+      <Label Text="{Binding Duracao}" />
+      <Label Text="DIÁRIA DO GRUPO" Style="{StaticResource Caption}" />
+      <Label Text="{Binding DiariaFormatada}" FontAttributes="Bold" />
+    </VerticalStackLayout></Border>
+    <Border BackgroundColor="{StaticResource Primary}" StrokeThickness="0"><VerticalStackLayout Spacing="8">
+      <Label Text="TOTAL DA ESTADIA" TextColor="#E3C58F" FontSize="12" CharacterSpacing="2" />
+      <Label Text="{Binding TotalFormatado}" TextColor="White" FontSize="38" FontAttributes="Bold" />
+      <Label Text="Diária do grupo × número de noites" TextColor="#D6E5DF" FontSize="13" />
+    </VerticalStackLayout></Border>
+    <Label Text="Valores demonstrativos. Esta simulação não confirma uma reserva e não realiza cobranças." Style="{StaticResource Caption}" />
+    <Button Text="Editar minha estadia" Clicked="Voltar_Clicked" />
+  </VerticalStackLayout></ScrollView>
+</ContentPage>
